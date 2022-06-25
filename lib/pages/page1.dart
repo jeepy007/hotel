@@ -356,7 +356,35 @@ class HotelCard extends StatelessWidget {
                   style: GoogleFonts.nunito(
                       fontSize: 18, fontWeight: FontWeight.w800),
                 ),
-                Text('\$' + hotelData['price']),
+                Text(
+                  '\$' + hotelData['price'],
+                  style: GoogleFonts.nunito(
+                      fontSize: 18, fontWeight: FontWeight.w800),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              children: [
+                Text(
+                  hotelData['place'],
+                  style: GoogleFonts.nunito(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey[400],
+                  ),
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.place,
+                      size: 14,
+                      color: d_green,
+                    )
+                  ],
+                )
               ],
             ),
           )
