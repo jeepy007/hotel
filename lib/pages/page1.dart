@@ -345,6 +345,20 @@ class HotelCard extends StatelessWidget {
                 ),
               ),
             ]),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  hotelData['title'],
+                  style: GoogleFonts.nunito(
+                      fontSize: 18, fontWeight: FontWeight.w800),
+                ),
+                Text('\$' + hotelData['price']),
+              ],
+            ),
           )
         ],
       ),
