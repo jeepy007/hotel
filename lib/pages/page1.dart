@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hotels/main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hotels/calendar_page.dart';
 
 const d_green = Color(0xFF54D3C2);
 
@@ -131,7 +132,7 @@ class SearchSection extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(25)),
                 ),
                 child: ElevatedButton(
-                  onPressed: null,
+                  onPressed: () {},
                   child: Icon(
                     Icons.search,
                     size: 26,
@@ -367,13 +368,14 @@ class HotelCard extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 10),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   hotelData['place'],
                   style: GoogleFonts.nunito(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: Colors.grey[400],
+                    color: Colors.grey[500],
                   ),
                 ),
                 Row(
@@ -382,12 +384,75 @@ class HotelCard extends StatelessWidget {
                       Icons.place,
                       size: 14,
                       color: d_green,
-                    )
+                    ),
+                    Text(
+                      hotelData['distance'].toString() + 'km to city',
+                      style: GoogleFonts.nunito(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey[500],
+                      ),
+                    ),
+                    Text(
+                      'per night',
+                      style: GoogleFonts.nunito(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey[500],
+                      ),
+                    ),
                   ],
-                )
+                ),
               ],
             ),
-          )
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(10, 3, 10, 0),
+            child: Row(
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star_rate,
+                      color: d_green,
+                      size: 14,
+                    ),
+                    Icon(
+                      Icons.star_rate,
+                      color: d_green,
+                      size: 14,
+                    ),
+                    Icon(
+                      Icons.star_rate,
+                      color: d_green,
+                      size: 14,
+                    ),
+                    Icon(
+                      Icons.star_rate,
+                      color: d_green,
+                      size: 14,
+                    ),
+                    Icon(
+                      Icons.star_rate,
+                      color: d_green,
+                      size: 14,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  hotelData['review'].toString() + 'reviews',
+                  style: GoogleFonts.nunito(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey[500],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
