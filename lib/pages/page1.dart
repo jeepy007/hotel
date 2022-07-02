@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotels/main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotels/calendar_page.dart';
+import 'package:hotels/pages/page1.dart';
 
 const d_green = Color(0xFF54D3C2);
 
@@ -104,7 +105,7 @@ class SearchSection extends StatelessWidget {
                         color: Colors.grey,
                         blurRadius: 4,
                         offset: Offset(0, 3),
-                      )
+                      ),
                     ],
                   ),
                   child: TextField(
@@ -215,7 +216,23 @@ class HotelSection extends StatelessWidget {
       'place': 'Wembley, London',
       'distance': 2,
       'review': 36,
-      'picture': 'images/h2.jpeg',
+      'picture': 'assets/images/h2.jpeg',
+      'price': 180,
+    },
+    {
+      'title': 'Grand Royal Hotel',
+      'place': 'Wembley, London',
+      'distance': 4,
+      'review': 26,
+      'picture': 'assets/images/h3.jpeg',
+      'price': 150,
+    },
+    {
+      'title': 'Grand Royal Hotel',
+      'place': 'Wembley, London',
+      'distance': 2,
+      'review': 36,
+      'picture': 'assets/images/h4.jpeg',
       'price': 180,
     },
     {
@@ -223,23 +240,7 @@ class HotelSection extends StatelessWidget {
       'place': 'Wembley, London',
       'distance': 2,
       'review': 36,
-      'picture': 'images/h3.jpeg',
-      'price': 180,
-    },
-    {
-      'title': 'Grand Royal Hotel',
-      'place': 'Wembley, London',
-      'distance': 2,
-      'review': 36,
-      'picture': 'images/h4.jpeg',
-      'price': 180,
-    },
-    {
-      'title': 'Grand Royal Hotel',
-      'place': 'Wembley, London',
-      'distance': 2,
-      'review': 36,
-      'picture': 'images/h5.jpeg',
+      'picture': 'assets/images/h5.jpeg',
       'price': 180,
     },
   ];
@@ -319,6 +320,7 @@ class HotelCard extends StatelessWidget {
         ],
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             height: 140,
@@ -358,7 +360,7 @@ class HotelCard extends StatelessWidget {
                       fontSize: 18, fontWeight: FontWeight.w800),
                 ),
                 Text(
-                  '\$' + hotelData['price'],
+                  '\$' + hotelData['price'].toString(),
                   style: GoogleFonts.nunito(
                       fontSize: 18, fontWeight: FontWeight.w800),
                 ),
@@ -379,6 +381,7 @@ class HotelCard extends StatelessWidget {
                   ),
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(
                       Icons.place,

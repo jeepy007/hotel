@@ -20,6 +20,13 @@ class CalendarPage extends StatelessWidget {
   }
 }
 
+class PeriodSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
 class CalendarRange extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -76,12 +83,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       ],
       backgroundColor: Colors.white,
     );
-  }
-}
-
-class PeriodSection extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
