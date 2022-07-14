@@ -11,7 +11,7 @@ import 'hotelCard.dart';
 
 const d_green = Color(0xFF54D3C2);
 MyService _myService = MyService();
-List hotelList = _myService.myMap;
+List hotelList = _myService.myMap2;
 
 void main() {
   runApp(MyApp());
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,12 +51,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       leading: IconButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => HomePage()),
-          );
-        },
+        onPressed: null,
         icon: Icon(
           Icons.arrow_back,
           color: Colors.grey[800],
