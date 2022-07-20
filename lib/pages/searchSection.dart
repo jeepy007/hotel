@@ -51,6 +51,15 @@ class _SearchSectionState extends State<SearchSection> {
                       contentPadding: EdgeInsets.all(10),
                       border: InputBorder.none,
                     ),
+                    /*onChanged: (text) {
+                      text = text.toLowerCase();
+                      setState(() {
+                        _hotelList = hotelList
+                            .where((element) =>
+                                element["title"].toLowerCase().contains(text))
+                            .toList();
+                      });
+                    },*/
                   ),
                 ),
               ),
@@ -75,8 +84,9 @@ class _SearchSectionState extends State<SearchSection> {
                     print(name1.text);
                     print(testdata["title"]);
                     print("***********************************");
-                    final index1 = hotelList.indexWhere(
-                        (element) => element["title"] == name1.text);
+                    final index1 = hotelList.indexWhere((element) =>
+                        element["title"].toLowerCase() ==
+                        name1.text.toLowerCase());
                     if (index1 != -1) {
                       print("Index $index1: ${hotelList[index1]}");
                       _hotelList.add(hotelList[index1]);
